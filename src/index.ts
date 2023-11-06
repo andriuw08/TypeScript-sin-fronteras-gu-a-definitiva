@@ -93,3 +93,5 @@ function validaEdad(edad: number): string {
 
     return 'no puedes pasar'
 }
+
+// Never funciona para las funciones que lanzan excepsiones 
