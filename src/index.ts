@@ -144,3 +144,18 @@ function toNumber (s: string | null)  { // -> nullable
 }
 
 const n = toNumber(null)
+
+function getUser(id: number) {
+    if(id < 0) {
+        null
+    }
+    return {
+        id: 1,
+        name: 'Felipe',
+        created_at: new Date ()
+    }
+}
+
+const user = getUser(-1)
+
+console.log(user?.created_at) // -> ? es el chaining operator, primero antes de acceder al objeto evalua si existe, ya luego entre al valor
