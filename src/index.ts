@@ -9,6 +9,7 @@
 // sourceMap genera archivos para que le pueda decir al visualcode como se va a mapear el codigo
 // Con los puntitos rojos de la izquierda decimos cual sera el brakePoint de nuestro depurador
 // En run debug, creamos un archivo json con node js
+// Con el noImplicitReturns hacemos que salte un error cada que una de nuestras funciones no retorne algo 
 
 let mensaje: string = "Hola mundo"
 
@@ -76,4 +77,19 @@ const objeto3: Persona = {
     id: 1,
     nombre: 'Hola mundo',
     talla: Talla.Mediana
+}
+
+// const fn: (a: number) => number = (edad: number) => { // -> el primer parentesis lleva los parametros y el number es el tipo de valor que va a retornar
+//     if (edad > 17) {
+//         return 'puedes pasa'
+//     }
+//     return 'no puedes pasar'
+// }
+
+function validaEdad(edad: number): string {
+    if(edad > 17) {
+        return 'puedes ingresar'
+    }
+
+    return 'no puedes pasar'
 }
