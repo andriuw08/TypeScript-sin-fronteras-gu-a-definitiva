@@ -133,3 +133,6 @@ const product: Audit & Product = { // -> es uninterseption type, hace que sea de
     modified_at: '',
     name: ''
 }
+
+const nDeFibo: 0 | 3 | 1| 2 | 5 = 5 // -> Literal type, podemos asignar valores especificos que queremos que sea
+
