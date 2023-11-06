@@ -6,5 +6,12 @@
 // noEmitOnError es para poder hacer que se detenga todo una vez salte un error
 // removeComments es para que remueva los comentarios
 // Una vez configurado todo esto con solo colocar tsc en la terminal nos va a hacer todos los cambios
+// sourceMap genera archivos para que le pueda decir al visualcode como se va a mapear el codigo
+// Con los puntitos rojos de la izquierda decimos cual sera el brakePoint de nuestro depurador
+// En run debug, creamos un archivo json con node js
 
 let mensaje: string = "Hola mundo"
+
+console.log(mensaje)
+
+mensaje = "chao mundo"
