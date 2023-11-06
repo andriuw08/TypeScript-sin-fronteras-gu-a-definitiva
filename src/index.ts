@@ -169,3 +169,10 @@ const user2 = {
     username: 'chanchuito feliz',
     difficulty: difficulty ?? 1, // -> lo que esta a la izquierda de ?? es el valor que asiganamos en caso de existir, el de la derecha es el de defecto
 }
+
+const elem: any = null
+
+const elem1 = elem as number // -> as typpe asertion hace que nosotros asignemos el dato directamente que queremos que sea, sin importar si antes fue definido con otro tipo
+
+const input = document.getElementById('username') as HTMLInputElement // -> de esta manera le hacemos que sea de ese tipo y asi asegurar poder acceder a su value
+// es forzar a que sea de un tipo, pero no funciona para acceder al tipo de dato en caso de que anteriormente haya sido declarado con otro
