@@ -136,3 +136,11 @@ const product: Audit & Product = { // -> es uninterseption type, hace que sea de
 
 const nDeFibo: 0 | 3 | 1| 2 | 5 = 5 // -> Literal type, podemos asignar valores especificos que queremos que sea
 
+function toNumber (s: string | null)  { // -> nullable
+    if(!s) {
+        return 0
+    }
+    return parseInt(s)
+}
+
+const n = toNumber(null)
