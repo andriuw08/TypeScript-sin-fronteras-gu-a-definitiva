@@ -38,3 +38,5 @@ let checks: boolean[] = []
 let num2: Array<number> = [] // -> esta es la manera correcta de declarar un arreglo en ts
 
 // animales.map(x => x.) el autocompletado va a pasar solo los metodos que coincidan con el tipo de dato
+
+let tupla: [number, string] = [1, 'chanchito feliz'] // asi creamos una tupla para poder tener arreglos de objetos
