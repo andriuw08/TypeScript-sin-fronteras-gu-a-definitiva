@@ -40,3 +40,18 @@ let num2: Array<number> = [] // -> esta es la manera correcta de declarar un arr
 // animales.map(x => x.) el autocompletado va a pasar solo los metodos que coincidan con el tipo de dato
 
 let tupla: [number, string] = [1, 'chanchito feliz'] // asi creamos una tupla para poder tener arreglos de objetos
+
+const chica = 's'
+const mediana = 'm'
+const grande = 'l'
+const extragrande = 'xl'
+
+// PascalCase
+
+enum Talla { Chica = 's', Mediana = 'm', Grande = 'l', ExtraGrande = 'xl' }
+
+const variable1 = Talla.Chica 
+
+const enum LoadingState { Idle, Loading, Succes, Error } // -> Es una manera mas realista de utilizar el enum, para ver el estado de carga
+
+const estado = LoadingState.Succes
