@@ -32,3 +32,9 @@ let extinsionDinosaurios: number = 76_000_000
 let dinosaurioFavorito: string = "T-Rex"
 let extintos: boolean = true
 
+let animales: string[] = ['chanchito', 'feliz', 'felipe']
+let nums: number[] = [1, 2, 3]
+let checks: boolean[] = []
+let num2: Array<number> = [] // -> esta es la manera correcta de declarar un arreglo en ts
+
+// animales.map(x => x.) el autocompletado va a pasar solo los metodos que coincidan con el tipo de dato
