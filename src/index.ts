@@ -95,3 +95,41 @@ function validaEdad(edad: number): string {
 }
 
 // Never funciona para las funciones que lanzan excepsiones 
+
+let puntaje: number | string = 98 // -> con la | asignamos varios tipos de valor, es un union type
+
+puntaje = 'hola mundo'
+
+type Animal = {
+    id: number,
+    estado: string
+}
+
+type Usuario = {
+    id: number,
+    name: string
+}
+
+let animal: Usuario | Animal = { id: 1, estado: '', name: ''} // -> otro ejemplo de union type con objetos
+
+function suma2 (n: number | string): number { // -> otro ejemplo con funciones
+    if(typeof n === 'number') {
+        return n + 2
+    }
+    return parseInt(n + 2)
+}
+
+type Audit = {
+    create_at: string,
+    modified_at: string
+}
+
+type Product = {
+    name: string
+}
+
+const product: Audit & Product = { // -> es uninterseption type, hace que sea del mismo tipo de los otros los tipos a los que se les esta asignando
+    create_at: '',
+    modified_at: '',
+    name: ''
+}
