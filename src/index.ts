@@ -55,3 +55,25 @@ const variable1 = Talla.Chica
 const enum LoadingState { Idle, Loading, Succes, Error } // -> Es una manera mas realista de utilizar el enum, para ver el estado de carga
 
 const estado = LoadingState.Succes
+
+const objeto = { id: 1 }
+// objeto.nombre = 'Hola mundo' // -> Esto solo en js, para agregar uno en ts tenemos que declararlo si o si
+
+const objeto2: {
+    readonly id: number, // el readonly hace que sea solo de lescutra y no se pueda reescribir 
+    nombre?: string, // El ? hace que ya no sea totalmente necesario al definir un objeto 
+} = { id: 1, nombre: 'Hola mundo'}
+
+// La manra correcta de hacerlo es darle el valor desde afuera 
+
+type Persona = {
+    readonly id: number,
+    nombre: string,
+    talla: Talla,
+}
+
+const objeto3: Persona = {
+    id: 1,
+    nombre: 'Hola mundo',
+    talla: Talla.Mediana
+}
