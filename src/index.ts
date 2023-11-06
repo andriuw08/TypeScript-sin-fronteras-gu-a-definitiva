@@ -159,3 +159,13 @@ function getUser(id: number) {
 const user = getUser(-1)
 
 console.log(user?.created_at) // -> ? es el chaining operator, primero antes de acceder al objeto evalua si existe, ya luego entre al valor
+
+
+// nullish coalecing operator sirve para tomar valores por defecto
+
+const difficulty: number | null = null
+
+const user2 = {
+    username: 'chanchuito feliz',
+    difficulty: difficulty ?? 1, // -> lo que esta a la izquierda de ?? es el valor que asiganamos en caso de existir, el de la derecha es el de defecto
+}
