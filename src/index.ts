@@ -15,3 +15,20 @@ let mensaje: string = "Hola mundo"
 console.log(mensaje)
 
 mensaje = "chao mundo"
+
+/** 
+ * Tipos de datos en TS
+ * any: cualquier tipo de dato
+ * unknow
+ * never
+ * arrays
+ * tuplas
+ * Enums
+ * 
+ * Tipos inferidos
+*/
+
+let extinsionDinosaurios: number = 76_000_000
+let dinosaurioFavorito: string = "T-Rex"
+let extintos: boolean = true
+
