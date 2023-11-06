@@ -176,3 +176,18 @@ const elem1 = elem as number // -> as typpe asertion hace que nosotros asignemos
 
 const input = document.getElementById('username') as HTMLInputElement // -> de esta manera le hacemos que sea de ese tipo y asi asegurar poder acceder a su value
 // es forzar a que sea de un tipo, pero no funciona para acceder al tipo de dato en caso de que anteriormente haya sido declarado con otro
+
+// Type narrowing sirve para poder tener dos tipos de datos en una variable
+
+function Lala(x:string | number) {
+    // Sirve para llevar a un tipo por un camino en particular
+    // if(typeof x === 'number') {
+    //     x.
+    // }
+            // Asi mostramos los metodos que hay segun el tipo de dato
+    // if (typeof x === 'string') {
+    //     x.
+    // }
+}
+
+// unknow es el remplazo de any
