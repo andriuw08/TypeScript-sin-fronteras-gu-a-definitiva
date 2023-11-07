@@ -41,3 +41,27 @@ class Programador<T> {
 
 const pogramador = new Programador<Computador>({encender: () => {}, apagar: () => {} })
 const programador1 = new Programador<string>('hola mundo')
+
+
+interface KeyValue<T, V> {
+    key: T,
+    value: V
+}
+
+interface Product {
+    id: string
+}
+
+function fetchProduct(): KeyValue<string, Product> {
+    return {
+        key: 'id de producto',
+        value: { id: 'id de producto' }
+    }
+}
+
+function fetchStock(): KeyValue<string, number> {
+    return {
+        key: 'id del producto',
+        value: 500
+    }
+}
