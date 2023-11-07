@@ -77,3 +77,33 @@ function print<T extends Usuario>(t: T): T { // -> Hace que el tipo de dato el c
 }
 
 print({ id: 'user_id', name: 'Felipe' })
+
+class Estado<T> {
+    protected data: T[] = []
+
+    agregar(t: T): void {
+        this.data.push(t)
+    }
+
+    getEstado(): T[] {
+        return this.data
+    }
+}
+
+type ObjectId = {
+    id: string
+}
+
+class EstadoEliminar<T extends ObjectId> extends Estado<T> { // Esto se llama pasar un generico, cada que pasemos el tipo en estado generico le llegara a la clase padre
+    eliminar(id: string) {
+        this.data = this.data.filter(x => x.id !== id)
+    }
+} // pasar genericos con restricciones
+
+class EstadoUsuarios<T> extends Estado <Usuario> { // Pasar genericos fijos
+    reiniciarContrasenas() {
+
+    }
+}
+
+const estadoUsuarios = new EstadoUsuarios()
