@@ -195,16 +195,26 @@
 // POO
 
 class Personaje {
-    readonly id: number // hace que no pueda ser reasignada en ningun momento
-    name: string
-    nivel: number
-    private _hp: number // private es para que la propiedad sea privada de la clase, ademas, del _ antes del nombre es como un acuerdo entre desarrolladores para decir que es privada0
-    profesion?: string // Con el ? hacemos que sea un atributo no necesario, es decir que podemos utilizarlo en otro momento 
-    constructor(id: number, name: string, nivel: number, hp: number) { // -> con el constructor es para inicializar los atributos y retornar la clase
-        this.id = id
-        this.name = name
-        this.nivel = nivel
-        this._hp = hp
+    // readonly id: number // hace que no pueda ser reasignada en ningun momento
+    // name: string
+    // nivel: number
+    // private _hp: number // private es para que la propiedad sea privada de la clase, ademas, del _ antes del nombre es como un acuerdo entre desarrolladores para decir que es privada0
+    // profesion?: string // Con el ? hacemos que sea un atributo no necesario, es decir que podemos utilizarlo en otro momento 
+    // constructor(id: number, name: string, nivel: number, hp: number) { // -> con el constructor es para inicializar los atributos y retornar la clase
+    //     this.id = id
+    //     this.name = name
+    //     this.nivel = nivel
+    //     this._hp = hp
+    // }
+
+    // Manera mas corta de definir propiedades y constructor
+    profesion?: string
+    constructor(
+        public readonly id: number, 
+        public name: string, 
+        public nivel: number, 
+        private hp: number
+    ) {
     }
 
     subirNivel(): number { // -> metodos o funciones para la clase
