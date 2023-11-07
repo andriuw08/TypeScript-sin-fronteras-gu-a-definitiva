@@ -209,6 +209,7 @@ class Personaje {
 
     // Manera mas corta de definir propiedades y constructor
     profesion?: string
+    static equipo: number = 0 // estatic hace que no pertenezca a las instancias de personaje, sino a la clase como tal de personaje
     constructor(
         public readonly id: number, 
         public name: string, 
@@ -227,8 +228,16 @@ class Personaje {
         return this._hp
     }
 
+    static agregarPersonaje(): void { // void se usa cuando no queremos retornar nada
+        Personaje.equipo++ // this es para instanciar, Personaje es para referirnos a la propiedad literlamnete de la clase 
+    }
+
     get hp(): number {
         return this._hp
+    }
+
+    static getEquipo(): number {
+        return Personaje.equipo
     }
 
     set hp(cantidad: number) { // Los setters no retornan valor
@@ -240,6 +249,11 @@ const personaje = new Personaje(1, 'Andriuw', 1, 100) // -> instanciacion
 
 personaje.cambiarHp(-10)
 personaje.hp = 20
+
+const personaje1 = new Personaje(2, 'Chanchito', 1, 100)
+Personaje.agregarPersonaje()
+console.log(personaje, personaje1)
+console.log(Personaje.getEquipo())
 
 console.log(personaje)
 console.log(personaje.hp)
