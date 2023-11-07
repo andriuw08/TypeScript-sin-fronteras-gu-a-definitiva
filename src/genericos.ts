@@ -107,3 +107,21 @@ class EstadoUsuarios<T> extends Estado <Usuario> { // Pasar genericos fijos
 }
 
 const estadoUsuarios = new EstadoUsuarios()
+
+type Calendar = {
+    id: number,
+    fuente: string,
+    dueno: string
+}
+
+const calendar: Calendar = { id: 1, fuente: 'Google', dueno: 'yo'}
+
+function getProps<T>(objeto: T, property: keyof T): unknown { // Hace que evalue las propiedades para que solo permita propiedades que existen en el tipo
+    return objeto[property]
+}
+
+getProps<Calendar>(calendar, 'id')
+getProps<Calendar>(calendar, 'fuente')
+// getProps<Calendar>(calendar, 'noExiste') // da error porque no existe
+
+
