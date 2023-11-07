@@ -18,8 +18,10 @@ class DatosBasicos {
     constructor(
         public name: string,
         public desc: string,
-        public created_at: Date,
-        public created_by: number,
+        protected created_at: Date,
+        protected created_by: number,
+        // private para que no pueda ser utilizada en ninguna otra parte, ni aparece
+        // protected si se puede acceder a ella desde la clase y las que heresan la clase, mas no desde afuera se accede con el super 
     ) {}
 
     get fullYear() {
