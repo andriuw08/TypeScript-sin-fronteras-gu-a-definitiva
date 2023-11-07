@@ -124,4 +124,32 @@ getProps<Calendar>(calendar, 'id')
 getProps<Calendar>(calendar, 'fuente')
 // getProps<Calendar>(calendar, 'noExiste') // da error porque no existe
 
+type Punto = {
+    x: number,
+    y: number,
+    desc?: string
+}
 
+type PuntoOpcionasl = Partial<Punto> // Crea un Punto opcional para todas las variables, lo cual hace que tengamos un apartado con todos opcionales
+
+
+type PuntoRequerido = Required<Punto> // Crea un Punto requerido para todas las variables, lo cual hace que tengamos un apartado con todos requeridos
+
+const keyVal: Record<string, number> = { // record hace que el primero sea el valor de la propiedad y el segundo el valor que se le va a asignar, es como si obtuvieramos algo y retornaramos otra
+    'soy un string': 42
+}
+
+const p: Omit<Punto, 'desc' | 'y' > = { // El Omit hace que omitamos cosas, por ejemplo la y, la estamos omitiendo y ya no s epuede pasar como atributo 
+    x: 1,
+    // y: 2,
+}
+
+const p1: Pick<Punto, 'x' | 'y'> = { // Hace que elija propiedades especificas
+    x: 1,
+    y: 2,
+}
+
+const readOnlyP: Readonly<Punto> = { // Hace que no puedan ser modificadas
+    x: 1,
+    y:2, 
+}
