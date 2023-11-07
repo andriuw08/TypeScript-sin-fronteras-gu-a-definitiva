@@ -195,10 +195,11 @@
 // POO
 
 class Personaje {
-    id: number
+    readonly id: number // hace que no pueda ser reasignada en ningun momento
     name: string
     nivel: number
     private _hp: number // private es para que la propiedad sea privada de la clase, ademas, del _ antes del nombre es como un acuerdo entre desarrolladores para decir que es privada0
+    profesion?: string // Con el ? hacemos que sea un atributo no necesario, es decir que podemos utilizarlo en otro momento 
     constructor(id: number, name: string, nivel: number, hp: number) { // -> con el constructor es para inicializar los atributos y retornar la clase
         this.id = id
         this.name = name
