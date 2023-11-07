@@ -14,7 +14,7 @@
 
 // noImplicitOverride en el tsConfig sirve para que nos avise cuando necesitemos colocarle el override a un getter
 
-class DatosBasicos {
+abstract class DatosBasicos { // las clases abstractas hacen que no podamos crear instancias de la clase, no podemos crear nuevos datos
     constructor(
         public name: string,
         public desc: string,
@@ -31,6 +31,8 @@ class DatosBasicos {
     get fullDesc() {
         return this.name + '' + this.desc
     }
+
+    abstract guardar(): void; // Hace que sea un metodo que nuestras otras clase tengan que implementar si o si, pero que este puede varias
 }
 
 class Producto extends DatosBasicos { // Las clases que extienden de otra son clases derivadas
@@ -48,6 +50,10 @@ class Producto extends DatosBasicos { // Las clases que extienden de otra son cl
     override get fullDesc() {
         return 'Producto ' + super.fullDesc
     }
+
+    guardar() {
+        console.log('Guarda producto')
+    }
 }
 
 class Categoria extends DatosBasicos { // Las clases que extienden de otra son clases derivadas
@@ -63,6 +69,10 @@ class Categoria extends DatosBasicos { // Las clases que extienden de otra son c
 
     agregarProducto(producto: Producto){
         this.productos.push(producto)
+    }
+
+    guardar() {
+        console.log('Guarda Categoria')
     }
 }
 
