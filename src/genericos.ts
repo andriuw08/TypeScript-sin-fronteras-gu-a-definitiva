@@ -65,3 +65,15 @@ function fetchStock(): KeyValue<string, number> {
         value: 500
     }
 }
+
+interface Usuario {
+    id: string
+    name: string
+}
+
+function print<T extends Usuario>(t: T): T { // -> Hace que el tipo de dato el cual le vamos a pasar tenga la misma forma que usuario 
+    console.log(t)
+    return t
+}
+
+print({ id: 'user_id', name: 'Felipe' })
