@@ -198,12 +198,12 @@ class Personaje {
     id: number
     name: string
     nivel: number
-    hp: number
+    private _hp: number // private es para que la propiedad sea privada de la clase, ademas, del _ antes del nombre es como un acuerdo entre desarrolladores para decir que es privada0
     constructor(id: number, name: string, nivel: number, hp: number) { // -> con el constructor es para inicializar los atributos y retornar la clase
         this.id = id
         this.name = name
         this.nivel = nivel
-        this.hp = hp
+        this._hp = hp
     }
 
     subirNivel(): number { // -> metodos o funciones para la clase
@@ -212,8 +212,8 @@ class Personaje {
     }
 
     cambiarHp(cantidad: number): number {
-        this.hp = this.hp + cantidad
-        return this.hp
+        this._hp = this._hp + cantidad
+        return this._hp
     }
 }
 
@@ -222,4 +222,6 @@ const personaje = new Personaje(1, 'Andriuw', 1, 100) // -> instanciacion
 personaje.cambiarHp(-10)
 
 console.log(personaje)
+
+
 
