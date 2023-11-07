@@ -33,3 +33,11 @@ class Perro implements Animal {
         return 'guau'
     }
 }
+
+class DiccionarioUsuarios {
+    [id: string]: string // index signature, sirve para cuando tenemos propiedades a las cuales no podemos asignarle el tipo 
+}
+
+let diccionarioUsuarios = new DiccionarioUsuarios()
+diccionarioUsuarios['1a'] = 'usuario 1'
+
