@@ -213,7 +213,7 @@ class Personaje {
         public readonly id: number, 
         public name: string, 
         public nivel: number, 
-        private hp: number
+        private _hp: number
     ) {
     }
 
@@ -226,13 +226,23 @@ class Personaje {
         this._hp = this._hp + cantidad
         return this._hp
     }
+
+    get hp(): number {
+        return this._hp
+    }
+
+    set hp(cantidad: number) { // Los setters no retornan valor
+        this._hp = this._hp + cantidad
+    }
 }
 
 const personaje = new Personaje(1, 'Andriuw', 1, 100) // -> instanciacion
 
 personaje.cambiarHp(-10)
+personaje.hp = 20
 
 console.log(personaje)
+console.log(personaje.hp)
 
 
 
