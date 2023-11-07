@@ -8,8 +8,8 @@
 //     ) {}
 // }
 
-import { Point } from './Point'
-import { Group } from './Group' 
+import { Point } from './Point' // utilizar {} es para export nombrado
+import Group from './Group'  // Sin las {} es por el export default
 
 const point = new Point(1, 2)
 const group = new Group(1, 'Andriuw')
